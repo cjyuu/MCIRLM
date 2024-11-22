@@ -1,0 +1,40 @@
+batch_size: 1
+epochs: 10
+eval_every_n_epochs: 1
+
+fine_tune_from: scratch
+
+log_every_n_steps: 50
+gpu: cuda:0
+random_seed: 3
+task: regression
+times: 1
+
+optim:
+  optimizer: Adam
+  lr: 0.001
+  momentum: 0.9
+  weight_decay: 1e-6
+
+data_name: 'mp'
+
+dataset:
+  root_dir: ./data
+  label_dir: ./data/id_prop.csv
+
+traindata:
+  root_dir: ./data
+  label_dir: ./data/train.csv
+
+validdata:
+  root_dir: ./data
+  label_dir: ./data/val.csv
+
+testdata:
+  root_dir: ./data
+  label_dir: ./data/test.csv
+
+
+dataloader:
+  num_workers: 0
+
