@@ -29,7 +29,9 @@ To input crystal structures to MCIRLM, You can create a customized dataset by cr
 -   id.cif: a CIF file that recodes the crystal structure, where ID is the unique ID for the crystal.
 -   test.csv
 -   val.csv
--   test.csv The structure of the  `data`  should be:
+-   test.csv
+
+The structure of the  `data`  should be:
 ```
 root_dir
 ├── id_prop.csv
