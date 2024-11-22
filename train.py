@@ -183,18 +183,12 @@ class FineTune(object):
                 else:  
                     epochs_no_improve += 1  
 
-                   
-
                 self.writer.add_scalar('valid_loss', valid_loss, global_step=valid_n_iter)
                 valid_n_iter += 1
 
-    
             if epochs_no_improve == patience:  
                   print(f'Early stopping')  
                   break 
-  
-
-
 
         self.model = model
         
@@ -225,7 +219,6 @@ class FineTune(object):
     def _validate(self, model, valid_loader, n_epoch):
         losses = AverageMeter()
         mae_errors = AverageMeter()
-
 
         with torch.no_grad():
             model.eval()
@@ -271,23 +264,15 @@ class FineTune(object):
                 output = model(src, frac, input_graph)
 
                 loss = self.criterion(output, target_var)
-
-                
                 mae_error = mae(output.data.cpu(), target)
                 losses.update(loss.data.cpu().item(), target.size(0))
                 mae_errors.update(mae_error, target.size(0))
-
-
-
 
             print('Epoch [{0}] Validate: [{1}/{2}], '
                   'Loss {loss.val:.4f} ({loss.avg:.4f}), '
                   'MAE {mae_errors.val:.3f} ({mae_errors.avg:.3f})'.format(
                 n_epoch + 1, bn + 1, len(self.valid_loader), loss=losses,
                 mae_errors=mae_errors))
-
-           
-
 
         model.train()
 
@@ -374,8 +359,6 @@ class FineTune(object):
             for cif_id, target_var, pred in zip(test_cif_ids, test_targets,
                                             test_preds):
                 writer.writerow((cif_id, target_var, pred))
-
-
 
         self.model.train()
 
