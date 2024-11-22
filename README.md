@@ -9,7 +9,7 @@ Jiayu Cao
 
 -   Python==3.9
 -   pytorch==1.10.1
--   pymatgen== 2023.9.25
+-   pymatgen==2023.9.25
 -   pandas== 2.1.3
 -   numpy==1.26.4
 -   matplotlib==3.4.3
