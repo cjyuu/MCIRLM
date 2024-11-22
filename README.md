@@ -3,7 +3,7 @@
 
 ## Developers
 
-Cao Jiayu
+Jiayu Cao 
 
 ## Prerequisites
 
